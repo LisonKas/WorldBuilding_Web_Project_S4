@@ -1,0 +1,252 @@
+{
+"name": "Environment",
+"form_fields": [
+    {
+    "name": "temperature",
+    "type": "number",
+    "unit": "°C"
+    },
+    {
+    "name": "relief",
+    "type": "selection",
+    "options": ["plat", "modéré", "élevé"]
+    },
+    {
+    "name": "ressources",
+    "type": "text",
+    "options": [
+        "Bois",
+        "Pierre",
+        "Métaux précieux",
+        "Fer",
+        "Cuivre",
+        "Charbon",
+        "Pétrole",
+        "Gaz naturel",
+        "Eau douce",
+        "Nourriture (grains, fruits, légumes)",
+        "Poisson",
+        "Phoques",
+        "Sel",
+        "Or",
+        "Argent",
+        "Gemme",
+        "Cristaux magiques",
+        "Énergie solaire",
+        "Énergie éolienne",
+        "Animaux d’élevage (vaches, moutons, chevaux)",
+        "Cuir",
+        "Laine",
+        "Produits médicinaux (plantes, herbes)",
+        "Épices",
+        "Soie",
+        "Sable",
+        "Argile",
+        "Glace",
+        "Basalte",
+        "Lave solidifiée",
+        "Ambre",
+        "Ivory",
+        "Perles",
+        "Coton",
+        "Papyrus",
+        "Champignons rares",
+        "Corail",
+        "Eaux thermales",
+        "Mana brut",
+        "Poudre alchimique",
+        "Soufre",
+        "Platine",
+        "Uranium",
+        "Titane",
+        "Plomb",
+        "Quartz",
+        "Obsidienne",
+        "Runes anciennes",
+        "Artefacts perdus",
+        "Déchets recyclables",
+        "Cendres volcaniques",
+        "Fruits magiques",
+        "Viandes exotiques",
+        "Peau de dragon",
+        "Plumes de griffon",
+        "Écailles de sirène",
+        "Ombre cristallisée",
+        "Eau bénite",
+        "Essence de vie",
+        "Pollen rare",
+        "Roches lunaires",
+        "Minéraux extraterrestres",
+        "Fibres synthétiques",
+        "Éléments technologiques anciens"
+    ]
+    },
+    {
+    "name": "percentage_eau",
+    "type": "number",
+    "unit": "%"
+    }
+],
+"results": [
+    {
+      "environment": "Banquise",
+      "temperature_min": -40,
+      "temperature_max": 0,
+      "relief": "plat",
+      "ressources": ["Glace", "Eau douce", "Poisson", "Phoques"],
+      "percentage_eau": 95,
+      "percentage_sel": 3,
+      "percentage_realism": 80
+    },
+    {
+      "environment": "Iceberg (Fantastique)",
+      "temperature_min": -50,
+      "temperature_max": -5,
+      "relief": "élevé",
+      "ressources": ["Cristaux magiques", "Glace éternelle", "Poisson géant"],
+      "percentage_eau": 90,
+      "percentage_sel": 5,
+      "percentage_realism": 30
+    },
+    {
+      "environment": "Glacier",
+      "temperature_min": -20,
+      "temperature_max": -5,
+      "relief": "modéré",
+      "ressources": ["Eau douce", "Glace ancienne", "Plantes rares"],
+      "percentage_eau": 85,
+      "percentage_sel": 1,
+      "percentage_realism": 90
+    },
+    {
+      "environment": "Désert de sable",
+      "temperature_min": 35,
+      "temperature_max": 55,
+      "relief": "plat",
+      "ressources": ["Sable", "Dunes mouvantes", "Oasis", "Plantes désertiques"],
+      "percentage_eau": 2,
+      "percentage_sel": 0,
+      "percentage_realism": 95
+    },
+    {
+      "environment": "Désert de sel",
+      "temperature_min": 20,
+      "temperature_max": 40,
+      "relief": "plat",
+      "ressources": ["Sel", "Minéraux rares", "Plantes salines"],
+      "percentage_eau": 10,
+      "percentage_sel": 90,
+      "percentage_realism": 80
+    },
+    {
+      "environment": "Désert de cristal (Fantastique)",
+      "temperature_min": 40,
+      "temperature_max": 60,
+      "relief": "élevé",
+      "ressources": ["Cristaux géants", "Sable enchanté", "Artefacts anciens"],
+      "percentage_eau": 0,
+      "percentage_sel": 10,
+      "percentage_realism": 20
+    },
+    {
+      "environment": "Forêt tropicale",
+      "temperature_min": 20,
+      "temperature_max": 35,
+      "relief": "modéré",
+      "ressources": ["Bois précieux", "Plantes médicinales", "Animaux exotiques"],
+      "percentage_eau": 70,
+      "percentage_sel": 0,
+      "percentage_realism": 95
+    },
+    {
+      "environment": "Jungle (Fantastique)",
+      "temperature_min": 25,
+      "temperature_max": 40,
+      "relief": "élevé",
+      "ressources": ["Arbres luminescents", "Fruits magiques", "Mana brut"],
+      "percentage_eau": 60,
+      "percentage_sel": 5,
+      "percentage_realism": 50
+    },
+    {
+      "environment": "Savane",
+      "temperature_min": 20,
+      "temperature_max": 35,
+      "relief": "plat",
+      "ressources": ["Herbes hautes", "Animaux de troupeaux", "Eau douce"],
+      "percentage_eau": 40,
+      "percentage_sel": 0,
+      "percentage_realism": 90
+    },
+    {
+      "environment": "Savane enchantée",
+      "temperature_min": 25,
+      "temperature_max": 40,
+      "relief": "modéré",
+      "ressources": ["Herbes magiques", "Esprits animaux", "Sources de mana"],
+      "percentage_eau": 30,
+      "percentage_sel": 5,
+      "percentage_realism": 40
+    },
+    {
+      "environment": "Montagnes enneigées",
+      "temperature_min": -30,
+      "temperature_max": 5,
+      "relief": "élevé",
+      "ressources": ["Glace", "Roches", "Métaux rares"],
+      "percentage_eau": 80,
+      "percentage_sel": 0,
+      "percentage_realism": 95
+    },
+    {
+      "environment": "Volcan actif",
+      "temperature_min": 50,
+      "temperature_max": 100,
+      "relief": "élevé",
+      "ressources": ["Lave", "Basalte", "Soufre"],
+      "percentage_eau": 0,
+      "percentage_sel": 10,
+      "percentage_realism": 90
+    },
+    {
+      "environment": "Île tropicale",
+      "temperature_min": 25,
+      "temperature_max": 35,
+      "relief": "modéré",
+      "ressources": ["Noix de coco", "Poisson", "Eau de mer"],
+      "percentage_eau": 85,
+      "percentage_sel": 5,
+      "percentage_realism": 95
+    },
+    {
+      "environment": "Récif de corail",
+      "temperature_min": 20,
+      "temperature_max": 30,
+      "relief": "plat",
+      "ressources": ["Poisson", "Coraux", "Perles"],
+      "percentage_eau": 90,
+      "percentage_sel": 5,
+      "percentage_realism": 80
+    },
+    {
+      "environment": "Marais",
+      "temperature_min": 10,
+      "temperature_max": 25,
+      "relief": "plat",
+      "ressources": ["Plantes aquatiques", "Eau stagnante", "Animaux amphibies"],
+      "percentage_eau": 75,
+      "percentage_sel": 2,
+      "percentage_realism": 85
+    },
+    {
+      "environment": "Marais mystique",
+      "temperature_min": 15,
+      "temperature_max": 30,
+      "relief": "modéré",
+      "ressources": ["Plantes luminescentes", "Esprits aquatiques", "Cristaux humides"],
+      "percentage_eau": 80,
+      "percentage_sel": 2,
+      "percentage_realism": 50
+    }
+  ]
+}
