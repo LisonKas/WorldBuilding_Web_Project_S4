@@ -7,7 +7,5 @@ import Theme from './components/Theme.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
-    <Button />
-    <Theme />
   </StrictMode>,
 )
