@@ -7,9 +7,13 @@ import worldbuilding from "../data/worldbuilding.json";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
+  const [selectedResult, setSelectedResult] = useState(null);
 
-  const navigateTo = (page) => {
+  const navigateTo = (page, result = null) => {
     setCurrentPage(page);
+    if (result) {
+      setSelectedResult(result); // On met à jour le résultat sélectionné
+    }
   };
 
   let results = worldbuilding.results;
@@ -33,7 +37,12 @@ export default function App() {
   }
   else if(currentPage === "choicePage"){
     content = (
-      <ChoicePage />
+      <ChoicePage onNavigate={navigateTo} />
+    );
+  }
+  else if(currentPage === "SingleResultPage"){
+    content = (
+      <ResultCard result={selectedResult}/>
     );
   }
 
