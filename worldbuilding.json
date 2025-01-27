@@ -82,10 +82,20 @@
     ]
     },
     {
-    "name": "percentage_eau",
+    "name": "percentage_water",
     "type": "number",
     "unit": "%"
-    }
+    },
+    {
+      "name": "percentage_salt",
+      "type": "number",
+      "unit": "%"
+    },
+    {
+      "name": "percentage_realism",
+      "type": "number",
+      "unit": "%"
+      }
 ],
 "results": [
     {
@@ -94,9 +104,12 @@
       "temperature_max": 0,
       "relief": "plat",
       "ressources": ["Glace", "Eau douce", "Poisson", "Phoques"],
-      "percentage_eau": 95,
-      "percentage_sel": 3,
-      "percentage_realism": 80
+      "percentage_water_min": 90,
+      "percentage_water_max": 95,
+      "percentage_salt_min": 2,
+      "percentage_salt_max": 3,
+      "percentage_realism_min": 75,
+      "percentage_realism_max": 80
     },
     {
       "environment": "Iceberg (Fantastique)",
@@ -104,9 +117,12 @@
       "temperature_max": -5,
       "relief": "élevé",
       "ressources": ["Cristaux magiques", "Glace éternelle", "Poisson géant"],
-      "percentage_eau": 90,
-      "percentage_sel": 5,
-      "percentage_realism": 30
+      "percentage_water_min": 85,
+      "percentage_water_max": 90,
+      "percentage_salt_min": 4,
+      "percentage_salt_max": 5,
+      "percentage_realism_min": 25,
+      "percentage_realism_max": 30
     },
     {
       "environment": "Glacier",
@@ -114,9 +130,12 @@
       "temperature_max": -5,
       "relief": "modéré",
       "ressources": ["Eau douce", "Glace ancienne", "Plantes rares"],
-      "percentage_eau": 85,
-      "percentage_sel": 1,
-      "percentage_realism": 90
+      "percentage_water_min": 80,
+      "percentage_water_max": 85,
+      "percentage_salt_min": 0,
+      "percentage_salt_max": 1,
+      "percentage_realism_min": 85,
+      "percentage_realism_max": 90
     },
     {
       "environment": "Désert de sable",
@@ -124,9 +143,12 @@
       "temperature_max": 55,
       "relief": "plat",
       "ressources": ["Sable", "Dunes mouvantes", "Oasis", "Plantes désertiques"],
-      "percentage_eau": 2,
-      "percentage_sel": 0,
-      "percentage_realism": 95
+      "percentage_water_min": 1,
+      "percentage_water_max": 2,
+      "percentage_salt_min": 0,
+      "percentage_salt_max": 0,
+      "percentage_realism_min": 90,
+      "percentage_realism_max": 95
     },
     {
       "environment": "Désert de sel",
@@ -134,9 +156,12 @@
       "temperature_max": 40,
       "relief": "plat",
       "ressources": ["Sel", "Minéraux rares", "Plantes salines"],
-      "percentage_eau": 10,
-      "percentage_sel": 90,
-      "percentage_realism": 80
+      "percentage_water_min": 8,
+      "percentage_water_max": 10,
+      "percentage_salt_min": 85,
+      "percentage_salt_max": 90,
+      "percentage_realism_min": 75,
+      "percentage_realism_max": 80
     },
     {
       "environment": "Désert de cristal (Fantastique)",
@@ -144,9 +169,12 @@
       "temperature_max": 60,
       "relief": "élevé",
       "ressources": ["Cristaux géants", "Sable enchanté", "Artefacts anciens"],
-      "percentage_eau": 0,
-      "percentage_sel": 10,
-      "percentage_realism": 20
+      "percentage_water_min": 0,
+      "percentage_water_max": 0,
+      "percentage_salt_min": 8,
+      "percentage_salt_max": 10,
+      "percentage_realism_min": 15,
+      "percentage_realism_max": 20
     },
     {
       "environment": "Forêt tropicale",
@@ -154,9 +182,12 @@
       "temperature_max": 35,
       "relief": "modéré",
       "ressources": ["Bois précieux", "Plantes médicinales", "Animaux exotiques"],
-      "percentage_eau": 70,
-      "percentage_sel": 0,
-      "percentage_realism": 95
+      "percentage_water_min": 65,
+      "percentage_water_max": 70,
+      "percentage_salt_min": 0,
+      "percentage_salt_max": 0,
+      "percentage_realism_min": 90,
+      "percentage_realism_max": 95
     },
     {
       "environment": "Jungle (Fantastique)",
@@ -164,9 +195,12 @@
       "temperature_max": 40,
       "relief": "élevé",
       "ressources": ["Arbres luminescents", "Fruits magiques", "Mana brut"],
-      "percentage_eau": 60,
-      "percentage_sel": 5,
-      "percentage_realism": 50
+      "percentage_water_min": 55,
+      "percentage_water_max": 60,
+      "percentage_salt_min": 4,
+      "percentage_salt_max": 5,
+      "percentage_realism_min": 45,
+      "percentage_realism_max": 50
     },
     {
       "environment": "Savane",
@@ -174,9 +208,12 @@
       "temperature_max": 35,
       "relief": "plat",
       "ressources": ["Herbes hautes", "Animaux de troupeaux", "Eau douce"],
-      "percentage_eau": 40,
-      "percentage_sel": 0,
-      "percentage_realism": 90
+      "percentage_water_min": 35,
+      "percentage_water_max": 40,
+      "percentage_salt_min": 0,
+      "percentage_salt_max": 0,
+      "percentage_realism_min": 85,
+      "percentage_realism_max": 90
     },
     {
       "environment": "Savane enchantée",
@@ -184,9 +221,12 @@
       "temperature_max": 40,
       "relief": "modéré",
       "ressources": ["Herbes magiques", "Esprits animaux", "Sources de mana"],
-      "percentage_eau": 30,
-      "percentage_sel": 5,
-      "percentage_realism": 40
+      "percentage_water_min": 25,
+      "percentage_water_max": 30,
+      "percentage_salt_min": 4,
+      "percentage_salt_max": 5,
+      "percentage_realism_min": 35,
+      "percentage_realism_max": 40
     },
     {
       "environment": "Montagnes enneigées",
@@ -194,9 +234,12 @@
       "temperature_max": 5,
       "relief": "élevé",
       "ressources": ["Glace", "Roches", "Métaux rares"],
-      "percentage_eau": 80,
-      "percentage_sel": 0,
-      "percentage_realism": 95
+      "percentage_water_min": 75,
+      "percentage_water_max": 80,
+      "percentage_salt_min": 0,
+      "percentage_salt_max": 0,
+      "percentage_realism_min": 90,
+      "percentage_realism_max": 95
     },
     {
       "environment": "Volcan actif",
@@ -204,9 +247,12 @@
       "temperature_max": 100,
       "relief": "élevé",
       "ressources": ["Lave", "Basalte", "Soufre"],
-      "percentage_eau": 0,
-      "percentage_sel": 10,
-      "percentage_realism": 90
+      "percentage_water_min": 0,
+      "percentage_water_max": 0,
+      "percentage_salt_min": 8,
+      "percentage_salt_max": 10,
+      "percentage_realism_min": 85,
+      "percentage_realism_max": 90
     },
     {
       "environment": "Île tropicale",
@@ -214,9 +260,12 @@
       "temperature_max": 35,
       "relief": "modéré",
       "ressources": ["Noix de coco", "Poisson", "Eau de mer"],
-      "percentage_eau": 85,
-      "percentage_sel": 5,
-      "percentage_realism": 95
+      "percentage_water_min": 80,
+      "percentage_water_max": 85,
+      "percentage_salt_min": 4,
+      "percentage_salt_max": 5,
+      "percentage_realism_min": 90,
+      "percentage_realism_max": 95
     },
     {
       "environment": "Récif de corail",
@@ -224,9 +273,12 @@
       "temperature_max": 30,
       "relief": "plat",
       "ressources": ["Poisson", "Coraux", "Perles"],
-      "percentage_eau": 90,
-      "percentage_sel": 5,
-      "percentage_realism": 80
+      "percentage_water_min": 85,
+      "percentage_water_max": 90,
+      "percentage_salt_min": 4,
+      "percentage_salt_max": 5,
+      "percentage_realism_min": 75,
+      "percentage_realism_max": 80
     },
     {
       "environment": "Marais",
@@ -234,9 +286,12 @@
       "temperature_max": 25,
       "relief": "plat",
       "ressources": ["Plantes aquatiques", "Eau stagnante", "Animaux amphibies"],
-      "percentage_eau": 75,
-      "percentage_sel": 2,
-      "percentage_realism": 85
+      "percentage_water_min": 70,
+      "percentage_water_max": 75,
+      "percentage_salt_min": 1,
+      "percentage_salt_max": 2,
+      "percentage_realism_min": 80,
+      "percentage_realism_max": 85
     },
     {
       "environment": "Marais mystique",
@@ -244,9 +299,12 @@
       "temperature_max": 30,
       "relief": "modéré",
       "ressources": ["Plantes luminescentes", "Esprits aquatiques", "Cristaux humides"],
-      "percentage_eau": 80,
-      "percentage_sel": 2,
-      "percentage_realism": 50
+      "percentage_water_min": 75,
+      "percentage_water_max": 80,
+      "percentage_salt_min": 1,
+      "percentage_salt_max": 2,
+      "percentage_realism_min": 45,
+      "percentage_realism_max": 50
     }
   ]
 }
