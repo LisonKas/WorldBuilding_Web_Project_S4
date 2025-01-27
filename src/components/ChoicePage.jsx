@@ -1,15 +1,15 @@
-import Theme from './Theme.jsx'
-import Button from './Button.jsx'
-
-export default function ThemeCard({onNavigate}) {
+export default function ChoicePage({onNavigate}){
     const handleClick = () => {
-        onNavigate("choicePage");
+        onNavigate("allResultPage");
+    };
+    const new_handleClick = () => {
+        onNavigate("SingleResultPage");
     };
     return (
         <div>
             <Theme />
             <button onClick={handleClick} className="custom-button">
-                Click me
+                See all
             </button>
         </div>
     )

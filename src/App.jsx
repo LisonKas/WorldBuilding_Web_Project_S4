@@ -2,6 +2,7 @@ import {useState} from "react"
 import ContentArea from "./components/ContentArea"
 import WelcomeArea from "./components/WelcomeArea"
 import ResultCard from "./components/ResultCard";
+import ChoicePage from "./components/ChoicePage";
 import worldbuilding from "../data/worldbuilding.json";
 
 export default function App() {
@@ -21,13 +22,18 @@ export default function App() {
         <ContentArea onNavigate={navigateTo} /> 
       </>
     );
-  } else if (currentPage === "newPage") {
+  } else if (currentPage === "allResultPage") {
     content = (
       <div>
         {results.map((result, index) => (
           <ResultCard key={index} result={result} />))
         }
       </div>
+    );
+  }
+  else if(currentPage === "choicePage"){
+    content = (
+      <ChoicePage />
     );
   }
 
