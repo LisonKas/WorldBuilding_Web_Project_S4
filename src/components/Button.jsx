@@ -1,6 +1,6 @@
-export default function Button() {
+export default function Button({onNavigate}) {
     const handleClick = () => {
-        console.log("Button clicked");
+        onNavigate("newPage");
     };
     return (
         <button onClick={handleClick} className="custom-button">

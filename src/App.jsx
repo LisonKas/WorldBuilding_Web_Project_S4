@@ -1,16 +1,30 @@
-import Header from "./components/Header"
+import {useState} from "react"
 import ContentArea from "./components/ContentArea"
 import WelcomeArea from "./components/WelcomeArea"
-import Footer from "./components/Footer"
 
 
 export default function App() {
+  const [currentPage, setCurrentPage] = useState("home");
+
+  const navigateTo = (page) => {
+    setCurrentPage(page);
+  };
+
+  let content;
+  if (currentPage === "home") {
+    content = (
+      <>
+        <WelcomeArea />
+        <ContentArea onNavigate={navigateTo} /> {/* Passe la fonction à ContentArea */}
+      </>
+    );
+  } else if (currentPage === "newPage") {
+    content = <div className="new-page">Bienvenue sur la nouvelle page !</div>;
+  }
+
   return (
     <main>
-      <Header />
-      <WelcomeArea />
-      <ContentArea />
-      <Footer />
+      {content}
     </main>
-  )
+  );
 }

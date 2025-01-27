@@ -1,11 +1,11 @@
 import Theme from './Theme.jsx'
 import Button from './Button.jsx'
 
-export default function ThemeCard() {
+export default function ThemeCard({onNavigate}) {
     return (
         <div>
             <Theme />
-            <Button />
+            <Button onNavigate={onNavigate} />
         </div>
     )
 }
