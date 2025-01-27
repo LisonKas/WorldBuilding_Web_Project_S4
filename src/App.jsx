@@ -1,9 +1,16 @@
-import ThemeCard from "./components/ThemeCard"
+import Header from "./components/Header"
+import ContentArea from "./components/ContentArea"
+import WelcomeArea from "./components/WelcomeArea"
+import Footer from "./components/Footer"
+
 
 export default function App() {
   return (
-    <main>Hello World
-      <ThemeCard />
+    <main>
+      <Header />
+      <WelcomeArea />
+      <ContentArea />
+      <Footer />
     </main>
   )
 }
