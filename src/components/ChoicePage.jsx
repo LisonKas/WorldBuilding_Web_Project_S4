@@ -17,6 +17,11 @@ export default function ChoicePage({onNavigate}){
         onNavigate("allResultPage");
     };
 
+    const handleChooseResultsClick = () => {
+        console.log("button choose result clicked");
+        onNavigate("FormPage");
+    }
+
     return (
         <div>
             <h2>See all possible results</h2>
@@ -26,6 +31,10 @@ export default function ChoicePage({onNavigate}){
             <h2>Random result</h2>
             <button onClick={handleRandomClick} className="custom-button">
                 Choose Random
+            </button>
+            <h2>A result from your choices result</h2>
+            <button onClick={handleChooseResultsClick} className="custom-button">
+                Choose a result
             </button>
         </div>
     );
