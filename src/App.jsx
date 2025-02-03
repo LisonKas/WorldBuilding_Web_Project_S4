@@ -3,6 +3,7 @@ import ContentArea from "./components/ContentArea"
 import WelcomeArea from "./components/WelcomeArea"
 import ResultCard from "./components/ResultCard";
 import ChoicePage from "./components/ChoicePage";
+import Form from "./components/Form";
 import worldbuilding from "../data/worldbuilding.json";
 
 export default function App() {
@@ -43,6 +44,11 @@ export default function App() {
   else if(currentPage === "SingleResultPage"){
     content = (
       <ResultCard result={selectedResult}/>
+    );
+  }
+  else if(currentPage == "FormPage"){
+    content = (
+      <Form />
     );
   }
 

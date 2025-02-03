@@ -32,7 +32,7 @@ export default function ChoicePage({onNavigate}){
             <button onClick={handleRandomClick} className="custom-button">
                 Choose Random
             </button>
-            <h2>A result from your choices result</h2>
+            <h2>A result from your cho result</h2>
             <button onClick={handleChooseResultsClick} className="custom-button">
                 Choose a result
             </button>
