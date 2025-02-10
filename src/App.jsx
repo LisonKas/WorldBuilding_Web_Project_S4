@@ -48,7 +48,7 @@ export default function App() {
   }
   else if(currentPage == "FormPage"){
     content = (
-      <Form />
+      <Form onNavigate={navigateTo} />
     );
   }
 
