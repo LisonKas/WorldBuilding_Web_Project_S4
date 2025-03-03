@@ -87,6 +87,8 @@ export default function Form({onNavigate}) {
             <label className="font-semibold">
               {field.name.charAt(0).toUpperCase() + field.name.slice(1)}
             </label>
+            
+            {/* Handling number inputs */}
             {field.type === "number" ? (
               <input
                 type="number"
@@ -94,7 +96,10 @@ export default function Form({onNavigate}) {
                 className="p-2 border rounded-md"
                 placeholder={`Enter value in ${field.unit}`}
               />
-            ) : field.type === "selection" ? (
+            ) : null}
+
+            {/* Handling selection inputs for regular fields like 'relief' */}
+            {field.type === "selection" && !field.options[0]?.ressources_type ? (
               <select
                 onChange={(e) => handleChange(field.name, e.target.value)}
                 className="p-2 border rounded-md"
@@ -106,29 +111,47 @@ export default function Form({onNavigate}) {
                   </option>
                 ))}
               </select>
-            ) : field.type === "text" ? (
-              <div className="flex flex-wrap gap-2">
-                {field.options.map((option) => (
-                  <label key={option} className="flex items-center space-x-1">
-                    <input
-                      type="checkbox"
-                      value={option}
-                      onChange={(e) => {
-                        const selectedOptions = formData[field.name] || [];
-                        const updatedOptions = e.target.checked
-                          ? [...selectedOptions, option]
-                          : selectedOptions.filter((opt) => opt !== option);
-                        handleChange(field.name, updatedOptions);
-                      }}
-                      className="w-4 h-4"
-                    />
-                    <span>{option}</span>
-                  </label>
+            ) : null}
+
+            {field.type === "text" ? (
+              <div className="space-y-4">
+                <label className="font-semibold">Select Resources</label>
+
+                {/* Affichage des checkboxes pour chaque catégorie de ressources */}
+                {field.options.map((resourceCategory) => (
+                  <div key={resourceCategory.ressources_type}>
+                    <div className="font-semibold">{resourceCategory.ressources_type}</div>
+                    <div className="space-y-2">
+                      {resourceCategory.options.map((option) => (
+                        <label key={option} className="flex items-center space-x-2">
+                          <input
+                            type="checkbox"
+                            value={option}
+                            checked={(formData[field.name] || []).includes(option)}
+                            onChange={(e) => {
+                              const selectedOptions = formData[field.name] || [];
+                              let updatedOptions;
+                              if (e.target.checked) {
+                                updatedOptions = [...selectedOptions, option]; // Ajout de l'option
+                              } else {
+                                updatedOptions = selectedOptions.filter((opt) => opt !== option); // Suppression de l'option
+                              }
+                              handleChange(field.name, updatedOptions); // Mise à jour des ressources sélectionnées
+                            }}
+                            className="w-4 h-4"
+                          />
+                          <span>{option}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </div>
                 ))}
               </div>
             ) : null}
+            
           </div>
         ))}
+        
         <button
           type="submit"
           className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
