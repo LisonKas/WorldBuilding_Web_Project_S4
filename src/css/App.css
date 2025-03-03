@@ -1,0 +1,14 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+main{
+    background-image: url('./data/images/background_image.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+body{
+    color: white;
+}

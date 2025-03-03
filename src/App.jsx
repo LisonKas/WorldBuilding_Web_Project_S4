@@ -5,6 +5,7 @@ import ResultCard from "./components/ResultCard";
 import ChoicePage from "./components/ChoicePage";
 import Form from "./components/Form";
 import worldbuilding from "../data/worldbuilding.json";
+import "./css/App.css";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
@@ -53,8 +54,8 @@ export default function App() {
   }
 
   return (
-    <main>
+    <body>
       {content}
-    </main>
+    </body>
   );
 }
