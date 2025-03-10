@@ -1,10 +1,22 @@
 import { useState } from "react";
 import worldbuilding from "../../data/worldbuilding.json";
 
-export default function Form({onNavigate}) {
+export default function Form() {
     const [formData, setFormData] = useState({});
     const [randomResult, setRandomResult] = useState(null);
   
+     
+    // const [data, setData] = useState([]
+
+    // )
+    // const [category, setCategory] = useState("all")
+
+    // const filteredData = useMemo(() => {
+    //   return data.filter((item) => {
+    //     return item.categories.includes(category)
+    //   })
+    // }, [category])
+
     const handleChange = (fieldName, value) => {
       setFormData((prevData) => ({
         ...prevData,

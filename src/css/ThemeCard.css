@@ -1,11 +1,3 @@
-/* .div_container{
-    background-image: url('./data/images/Environment_card_design.png');
-    background-size: cover;
-    background-position: center;
-    width: 27%;
-    height: 67vh;
-} */
-
 .theme-card {
     background-image: url('../data/images/Environment_card_design.png');
     background-size: cover;
