@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import ResultCard from "./ResultCard";
+import "../css/Form.css";
 import worldbuilding from "../../data/worldbuilding.json";
 
 export default function Form({ setFormData }) {
@@ -144,7 +145,7 @@ export default function Form({ setFormData }) {
           </div>
         ))}
       </form>
-      <div className="environment-gallery">
+      <div className="environment-gallery" flex="wrap">
         {filteredResults.map((result) => (
           <ResultCard key={result.environment} result={result} />
         ))}
