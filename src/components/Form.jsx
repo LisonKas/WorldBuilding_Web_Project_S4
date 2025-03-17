@@ -1,120 +1,103 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ResultCard from "./ResultCard";
 import worldbuilding from "../../data/worldbuilding.json";
 
-export default function Form() {
-    const [formData, setFormData] = useState({});
-    const [randomResult, setRandomResult] = useState(null);
-  
-     
-    // const [data, setData] = useState([]
+export default function Form({ setFormData }) {
+  const [localFormData, setLocalFormData] = useState({});
+  const [filteredResults, setFilteredResults] = useState(worldbuilding.results);
 
-    // )
-    // const [category, setCategory] = useState("all")
+  const handleChange = (name, value) => {
+    const updatedData = { ...localFormData, [name]: value };
+    setLocalFormData(updatedData);
+    setFormData(updatedData);
+  };
 
-    // const filteredData = useMemo(() => {
-    //   return data.filter((item) => {
-    //     return item.categories.includes(category)
-    //   })
-    // }, [category])
+  // Fonction de filtrage des résultats en fonction des valeurs de formulaire
+  const filterResults = () => {
+    let results = worldbuilding.results;
 
-    const handleChange = (fieldName, value) => {
-      setFormData((prevData) => ({
-        ...prevData,
-        [fieldName]: value,
-      }));
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-  
-      let matchedResult = null;
+    // Filtrer par température
+    if (localFormData.temperature) {
+      const temperature = Number(localFormData.temperature);
+      results = results.filter(
+        (result) =>
+          result.temperature_min <= temperature && result.temperature_max >= temperature
+      );
+    }
 
-      for (const result of worldbuilding.results) {
-        console.log(result.environment);
-        const matchesTemperature =
-          formData.temperature >= result.temperature_min &&
-          formData.temperature <= result.temperature_max;
+    // Filtrer par relief
+    if (localFormData.relief) {
+      results = results.filter((result) => result.relief === localFormData.relief);
+    }
 
-        console.log("temperature : ", matchesTemperature);
+    // Filtrer par ressources
+    if (localFormData.ressources && localFormData.ressources.length > 0) {
+      results = results.filter((result) =>
+        localFormData.ressources.every((resource) => result.ressources.includes(resource))
+      );
+    }
 
-        const matchesRelief = formData.relief === result.relief;
+    // Filtrer par pourcentage d'eau
+    if (localFormData.percentage_water) {
+      const waterPercentage = Number(localFormData.percentage_water);
+      results = results.filter(
+        (result) =>
+          result.percentage_water_min <= waterPercentage &&
+          result.percentage_water_max >= waterPercentage
+      );
+    }
 
-        console.log("Relief : ", matchesRelief);
+    // Filtrer par pourcentage de sel
+    if (localFormData.percentage_salt) {
+      const saltPercentage = Number(localFormData.percentage_salt);
+      results = results.filter(
+        (result) =>
+          result.percentage_salt_min <= saltPercentage &&
+          result.percentage_salt_max >= saltPercentage
+      );
+    }
 
-        const formResources = formData.ressources || [];
-        let matchesResources = true;
+    // Filtrer par pourcentage de réalisme
+    if (localFormData.percentage_realism) {
+      const realismPercentage = Number(localFormData.percentage_realism);
+      results = results.filter(
+        (result) =>
+          result.percentage_realism_min <= realismPercentage &&
+          result.percentage_realism_max >= realismPercentage
+      );
+    }
 
-        for (const resource of result.ressources) {
-          if (formResources.indexOf(resource) === -1) {
-            matchesResources = false;
-            break;
-          }
-        }
+    // Mettre à jour les résultats filtrés
+    setFilteredResults(results);
+  };
 
-        console.log("Ressources : ", matchesResources);
+  // Utilisation de useEffect pour filtrer les résultats à chaque modification du formulaire
+  useEffect(() => {
+    filterResults();
+  }, [localFormData]);
 
-        const matchesPercentageWater =
-          formData.percentage_water >= result.percentage_water_min &&
-          formData.percentage_water <= result.percentage_water_max;
-
-        console.log("% water : ", matchesPercentageWater);
-
-        const matchesPercentageSalt =
-          formData.percentage_salt >= result.percentage_salt_min &&
-          formData.percentage_salt <= result.percentage_salt_max;
-
-        console.log("% salt : ", matchesPercentageSalt);
-
-        const matchesPercentageRealism =
-          formData.percentage_realism >= result.percentage_realism_min &&
-          formData.percentage_realism <= result.percentage_realism_max;
-
-        console.log("% realism : ", matchesPercentageRealism);
-
-        if (
-          matchesTemperature &&
-          matchesRelief &&
-          matchesResources &&
-          matchesPercentageWater &&
-          matchesPercentageSalt &&
-          matchesPercentageRealism
-        ) {
-          matchedResult = result;
-          break;
-        }
-      }
-  
-      if (matchedResult) {
-        setRandomResult(matchedResult);
-        onNavigate("SingleResultPage", matchedResult);
-      } else {
-        alert("Aucun résultat correspondant trouvé.");
-      }
-    };
-  
-    return (
-      <form onSubmit={handleSubmit} className="p-4 space-y-4 bg-gray-100 rounded-lg">
+  return (
+    <>
+      <form>
         {worldbuilding.form_fields.map((field) => (
-          <div key={field.name} className="flex flex-col space-y-2">
-            <label className="font-semibold">
-              {field.name.charAt(0).toUpperCase() + field.name.slice(1)}
-            </label>
-            
-            {/* Handling number inputs */}
-            {field.type === "number" ? (
+          <div key={field.name}>
+            <label>{field.name.charAt(0).toUpperCase() + field.name.slice(1)}</label>
+
+            {/* Champ de type number (ex : température, pourcentage d'eau, sel, etc.) */}
+            {field.type === "number" && (
               <input
                 type="number"
+                value={localFormData[field.name] || ""}
                 onChange={(e) => handleChange(field.name, e.target.value)}
-                className="p-2 border rounded-md"
                 placeholder={`Enter value in ${field.unit}`}
               />
-            ) : null}
+            )}
 
-            {/* Handling selection inputs for regular fields like 'relief' */}
-            {field.type === "selection" && !field.options[0]?.ressources_type ? (
+            {/* Champ de type sélection (ex : relief) */}
+            {field.type === "selection" && !field.options[0]?.ressources_type && (
               <select
+                value={localFormData[field.name] || ""}
                 onChange={(e) => handleChange(field.name, e.target.value)}
-                className="p-2 border rounded-md"
               >
                 <option value="">Select...</option>
                 {field.options.map((option) => (
@@ -123,34 +106,32 @@ export default function Form() {
                   </option>
                 ))}
               </select>
-            ) : null}
+            )}
 
-            {field.type === "text" ? (
-              <div className="space-y-4">
-                <label className="font-semibold">Select Resources</label>
-
-                {/* Affichage des checkboxes pour chaque catégorie de ressources */}
+            {/* Champ de type texte (ex : ressources) */}
+            {field.type === "text" && (
+              <div>
+                <label>Select Resources</label>
                 {field.options.map((resourceCategory) => (
                   <div key={resourceCategory.ressources_type}>
-                    <div className="font-semibold">{resourceCategory.ressources_type}</div>
-                    <div className="space-y-2">
+                    <div>{resourceCategory.ressources_type}</div>
+                    <div>
                       {resourceCategory.options.map((option) => (
-                        <label key={option} className="flex items-center space-x-2">
+                        <label key={option}>
                           <input
                             type="checkbox"
                             value={option}
-                            checked={(formData[field.name] || []).includes(option)}
+                            checked={(localFormData[field.name] || []).includes(option)}
                             onChange={(e) => {
-                              const selectedOptions = formData[field.name] || [];
+                              const selectedOptions = localFormData[field.name] || [];
                               let updatedOptions;
                               if (e.target.checked) {
-                                updatedOptions = [...selectedOptions, option]; // Ajout de l'option
+                                updatedOptions = [...selectedOptions, option];
                               } else {
-                                updatedOptions = selectedOptions.filter((opt) => opt !== option); // Suppression de l'option
+                                updatedOptions = selectedOptions.filter((opt) => opt !== option);
                               }
-                              handleChange(field.name, updatedOptions); // Mise à jour des ressources sélectionnées
+                              handleChange(field.name, updatedOptions);
                             }}
-                            className="w-4 h-4"
                           />
                           <span>{option}</span>
                         </label>
@@ -159,17 +140,15 @@ export default function Form() {
                   </div>
                 ))}
               </div>
-            ) : null}
-            
+            )}
           </div>
         ))}
-        
-        <button
-          type="submit"
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600"
-        >
-          Submit
-        </button>
       </form>
-    );
-  }
+      <div className="environment-gallery">
+        {filteredResults.map((result) => (
+          <ResultCard key={result.environment} result={result} />
+        ))}
+      </div>
+    </>
+  );
+}

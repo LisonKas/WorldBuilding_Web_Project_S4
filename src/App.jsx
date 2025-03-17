@@ -6,7 +6,6 @@ import WelcomeArea from "./components/WelcomeArea"
 import ResultCard from "./components/ResultCard";
 import ChoicePage from "./components/ChoicePage";
 import Form from "./components/Form";
-import worldbuilding from "../data/worldbuilding.json";
 import "./css/App.css";
 
 export default function App() {
@@ -20,8 +19,6 @@ export default function App() {
     }
   };
 
-  let results = worldbuilding.results;
-
   let content;
   if (currentPage === "home") {
     content = (
@@ -32,14 +29,7 @@ export default function App() {
     );
   } else if (currentPage === "allResultPage") {
     content = (
-      <>
-        <Form />
-        <div>
-          {results.map((result, index) => (
-            <ResultCard key={index} result={result} />))
-          }
-        </div>
-      </>
+          <Form />
     );
   }
   else if(currentPage === "choicePage"){
@@ -54,10 +44,10 @@ export default function App() {
   }
 
   return (
-    <body>
+    <>
       <Header onNavigate={navigateTo} />
       {content}
       <Footer />
-    </body>
+    </>
   );
 }

@@ -3,6 +3,7 @@ export default function ResultCard({result}) {
     return (
         <div>
             <h2>{result.environment}</h2>
+            <h5>Relief : {result.relief}</h5>
             <p>Temperature : from {result.temperature_min} to {result.temperature_max}°C<br/>
             Water percentage : from {result.percentage_water_min} to {result.percentage_water_max}%<br/>
             Salt percentage : from {result.percentage_salt_min} to {result.percentage_salt_max}%<br/>
