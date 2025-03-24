@@ -1,7 +1,9 @@
+import "../css/ResultCard.css";
+
 export default function ResultCard({result}) {
     if (!result) return null;
     return (
-        <div>
+        <div className="result-card-content">
             <h2>{result.environment}</h2>
             <h5>Relief : {result.relief}</h5>
             <p>Temperature : from {result.temperature_min} to {result.temperature_max}°C<br/>

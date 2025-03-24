@@ -1,0 +1,17 @@
+.result-card-content {
+    background-image: url('../data/images/Big_result_card_design.png');
+    background-size: cover;
+    background-position: center;
+    padding: 1%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    margin: 1%;
+}
+
+@media (max-width: 480px) {
+    .result-card-content {
+        padding: 3%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+}
