@@ -1,5 +1,6 @@
 import { useState } from "react";
 import worldbuilding from "../../data/worldbuilding.json";
+import "../css/ChoicePage.css";
 
 export default function ChoicePage({onNavigate}){
     const [randomResult, setRandomResult] = useState(null);
@@ -18,12 +19,12 @@ export default function ChoicePage({onNavigate}){
     };
 
     return (
-        <div>
-            <h2>See all possible results</h2>
+        <div className="choice-content">
+            <h2 className="choice-h2">See all possible results</h2>
             <button onClick={handleAllResultsClick} className="custom-button">
                 See all
             </button>
-            <h2>Random result</h2>
+            <h2 className="choice-h2">Random result</h2>
             <button onClick={handleRandomClick} className="custom-button">
                 Choose Random
             </button>
