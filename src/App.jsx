@@ -39,7 +39,9 @@ export default function App() {
   }
   else if(currentPage === "SingleResultPage"){
     content = (
-      <ResultCard result={selectedResult}/>
+      <div className="single-result-card">
+        <ResultCard result={selectedResult}/>
+      </div>
     );
   }
 
