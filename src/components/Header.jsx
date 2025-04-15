@@ -1,30 +1,19 @@
-// import "../css/Header.css"
-
-// export default function Header({onNavigate}) {
-//     return (
-//         <div className="content-div">
-//             <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("home"); }}><h1>ATLAS</h1></a>
-//             <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("choicePage"); }}><h3>Return to choose</h3></a>
-//         </div>
-//     )
-// }
-
 import "../css/Header.css";
 
-export default function Header({ onNavigate }) {
+export default function Header() {
   return (
     <div className="header-container">
       <div className="logo-container">
-        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("home"); }}>
+        <a href="/">
           <h1 className="site-title">ATLAS</h1>
         </a>
         <p className="site-subtitle">A Worldbuilding Companion</p>
       </div>
       <div className="nav-links">
-        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("home"); }} className="nav-link">
+        <a href="/" className="nav-link">
           Home
         </a>
-        <a href="#" onClick={(e) => { e.preventDefault(); onNavigate("choicePage"); }} className="nav-link">
+        <a href="/choice" className="nav-link">
           Choose World
         </a>
       </div>

@@ -1,21 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import worldbuilding from "../../data/worldbuilding.json";
 import "../css/ChoicePage.css";
 
-export default function ChoicePage({onNavigate}){
+export default function ChoicePage(){
     const [randomResult, setRandomResult] = useState(null);
+    const navigate = useNavigate();
 
     const handleRandomClick = () => {
         const randomIndex = Math.floor(Math.random() * worldbuilding.results.length);
         const randomChosen = worldbuilding.results[randomIndex];
         setRandomResult(randomChosen);
-        console.log("button  clicked");
-        onNavigate("SingleResultPage", randomChosen);
+
+        navigate("/single-result", { state: { result: randomChosen } });
     };
 
     const handleAllResultsClick = () => {
-        console.log("button see all clicked");
-        onNavigate("allResultPage");
+        navigate("/all-results");
     };
 
     return (

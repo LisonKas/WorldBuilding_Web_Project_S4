@@ -1,9 +1,9 @@
 import ThemeCard from "./ThemeCard";
 
-export default function ContentArea({onNavigate}) {
+export default function ContentArea() {
     return (
         <div>
-            <ThemeCard onNavigate={onNavigate}/>
+            <ThemeCard/>
         </div>
     )
 }

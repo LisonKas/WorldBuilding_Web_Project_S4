@@ -12,43 +12,10 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [selectedResult, setSelectedResult] = useState(null);
 
-  const navigateTo = (page, result = null) => {
-    setCurrentPage(page);
-    if (result) {
-      setSelectedResult(result); // On met à jour le résultat sélectionné
-    }
-  };
-
-  let content;
-  if (currentPage === "home") {
-    content = (
-      <>
-        <WelcomeArea />
-        <ContentArea onNavigate={navigateTo} /> 
-      </>
-    );
-  } else if (currentPage === "allResultPage") {
-    content = (
-          <Form />
-    );
-  }
-  else if(currentPage === "choicePage"){
-    content = (
-      <ChoicePage onNavigate={navigateTo} />
-    );
-  }
-  else if(currentPage === "SingleResultPage"){
-    content = (
-      <div className="single-result-card">
-        <ResultCard result={selectedResult}/>
-      </div>
-    );
-  }
-
   return (
     <>
-      <Header onNavigate={navigateTo} />
-      {content}
+      <Header />
+        {content}
       <Footer />
     </>
   );
