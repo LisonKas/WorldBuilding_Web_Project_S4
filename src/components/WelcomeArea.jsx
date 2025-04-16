@@ -1,7 +1,10 @@
+import BigLogo from "../../data/images/Big_Logo.png";
+import "../css/WelcomeArea.css";
+
 export default function WelcomeArea() {
     return (
-        <div>
-            <h2>logo of Atlas with a great background image</h2>
+        <div className="welcome-area">
+            <img src={BigLogo} alt="Atlas Logo" className="logo" />
         </div>
     )
 }
