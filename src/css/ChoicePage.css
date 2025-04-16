@@ -10,3 +10,20 @@
     padding: 1%;
     border-bottom: dotted #e8c56e;
 }
+
+.random-history {
+    margin:2%;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:#e8c56e 3px dotted;
+}
+
+.choice-h3 {
+    border-bottom: solid #e8c56e;
+}
+
+.history-list {
+    padding: 5%;
+}
