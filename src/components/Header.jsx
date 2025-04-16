@@ -1,11 +1,12 @@
 import "../css/Header.css";
+import Logo from "../../data/images/Logo.png";
 
 export default function Header() {
   return (
     <div className="header-container">
       <div className="logo-container">
         <a href="/">
-          <h1 className="site-title">ATLAS</h1>
+          <img src={Logo} alt="Atlas Little Logo" className="little-logo" />
         </a>
         <p className="site-subtitle">A Worldbuilding Companion</p>
       </div>

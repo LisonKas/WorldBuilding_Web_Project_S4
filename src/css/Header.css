@@ -16,6 +16,11 @@
   text-align: left;
 }
 
+.little-logo {
+  width: 10%;
+  height: auto;
+}
+
 .site-title {
   font-size: 36px;
   font-weight: bold;
