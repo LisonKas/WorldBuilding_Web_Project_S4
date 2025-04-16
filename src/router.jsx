@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./components/Home";
-import AllResultsPage from "./components/AllResultsPage";
-import ChoicePage from "./components/ChoicePage";
-import SingleResultPage from "./components/SingleResultPage";
+import Home from "./pages/Home";
+import AllResultsPage from "./pages/AllResultsPage";
+import ChoicesPage from "./pages/ChoicesPage";
+import SingleResultPage from "./pages/SingleResultPage";
 
 const router = createBrowserRouter([
   {
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/choice",
-    element: <ChoicePage />,
+    element: <ChoicesPage />,
   },
   {
     path: "/single-result",

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import ResultCard from './ResultCard.jsx';
+import ResultCard from '../components/ResultCard.jsx';
 import "../css/ResultCard.css";
 
 export default function SingleResultPage({ selectedResult }) {
