@@ -4,14 +4,13 @@ import FormFields from "./FormFields";
 import "../css/Form.css";
 import worldbuilding from "../../data/worldbuilding.json";
 
-export default function Form({ setFormData }) {
+export default function Form() {
   const [localFormData, setLocalFormData] = useState({});
   const [filteredResults, setFilteredResults] = useState(worldbuilding.results);
 
   const handleChange = (name, value) => {
     const updatedData = { ...localFormData, [name]: value };
     setLocalFormData(updatedData);
-    setFormData(updatedData);
   };
 
   const filterResults = () => {
