@@ -1,8 +1,8 @@
 .environment-gallery {
-    display: flex;
-    flex-wrap: wrap; /* Permet le retour à la ligne */
-    gap: 20px; /* Espace entre les éléments */
-    justify-content: center; /* Centre les éléments */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }  
 
 .form-content {

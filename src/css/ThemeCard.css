@@ -2,7 +2,7 @@
     background-image: url('../data/images/Environment_card_design.png');
     background-size: cover;
     background-position: center;
-    width: 14vw; /* variables viewport ordinateur */
+    width: 14vw; /* viewport variables for pc */
     height: 50vh; 
     display: flex;
     flex-direction: column;
@@ -51,7 +51,7 @@
 
 @media (max-width: 480px) {
     .theme-card {
-        width: 44vw;
+        width: 44vw;  /* viewport variables for telephones */
         height: 34.4vh;
         margin: 5% auto;
         padding-left: 3.6%;

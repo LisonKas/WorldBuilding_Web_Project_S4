@@ -11,7 +11,7 @@ export default function SingleResultPage({ selectedResult }) {
 
     return (
         <div className="single-result-card">
-        <ResultCard result={result} />
+            <ResultCard result={result} />
         </div>
     );
 }
